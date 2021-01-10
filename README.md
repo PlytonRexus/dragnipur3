@@ -1,6 +1,6 @@
-## KYI Web App v2.0
+# Dragnipur 3
 
-### Kick off
+## Kick off
 - [ ] Install NodeJS if you don't already have it
 [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 - [ ] Clone this repo
@@ -12,6 +12,8 @@
     npm i
     ```
 - [ ] Start writing
+
+## Commands
 
 ### Dev server
 ```sh
@@ -28,7 +30,7 @@ npm run build
 Build process does not have to be run before deployment. It will be started automatically.
 This command assumes that the code must be pushed to `origin` remote.
 ```sh
-np run deploy
+npm run deploy
 ```
 
 ### Auto-fix formatting
@@ -44,14 +46,17 @@ This will output formatting errors in your files.
 npm test
 ```
 
+## Writing structure
+
 `public/src/js/common` contains methods and classes that are standard for all pages like:
   - Routing
   - Globals
 
 `public/src/css/common` contains styles that are standard for all pages like:
-  - fontss
+  - fonts
+  - alerts
 
-### Notes
+## Notes
 1. Put all JavaScript files inside `public/src/js/` only
 2. Similarly all CSS files go inside `public/src/css` only
 3. Keep HTML files wherever you need them

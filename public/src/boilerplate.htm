@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Base Meta -->
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="<your_description>" />
+	<meta name="keywords" content="<Your keywords" />
+	<meta name="author" content="Dragnipur Contributors">
+	<meta name="make" content="dragnipur" />
+
+	<!-- Cache Control -->
+	<!-- Might want to disable this when a service worker is used -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<!-- Google Site Verification -->
+	<meta name="google-site-verification" content="<nerification_content>" />
+
+	<!-- Title -->
+	<title>Know Your ISM | Web</title>
+
+	<!-- Favicon -->
+  	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+	<!-- Manifest for mobile devices -->
+	<link rel="manifest" href="manifest.json">
+
+	<!-- Bootstrap -->
+	<link href="vendor/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+	<style>
+		.container {
+			max-width: 960px;
+		}
+	</style>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="vendor/fontawesome5/css/fontawesome.min.css">
+
+	<!-- Fonts -->
+	<link rel="stylesheet" href="src/css/fonts.css">
+
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=<your_id>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '<your_id>');
+  </script>
+</head>
+
+<body class="bg-light">
+
+	<div class="container">
+		<main>
+			<!-- All HTML goes here -->
+			<h1>
+				<pre>
+					Hello Dragnipur!
+				</pre>
+			</h1>
+		</main>
+	</div>
+
+	<!-- Bootstrap JS -->
+	<script src="vendor/bootstrap4/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Service Worker for offine access -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('worker.js')
+			.then(function () {
+				console.log(
+					"Worker on v1.\nSearch responses are being cached. If there's a database update, you might have to clear your cache to get the new responses.\nLearn more on clearing cache in chrome: https://tinyurl.com/yya54xot.\nLearn more on clearing cahe in firefox: https://tinyurl.com/m6pngn5."
+				);
+			})
+			.catch(e => console.error("Worker not registered."));
+		}
+	</script>
+
+	<!-- Eruda for mobile debugging -->
+	<script>
+		;(function () {
+			var src = '/vendor/eruda/eruda.min.js';
+			if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+			document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+			document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+		})();
+	</script>
+</body>
+
+</html>

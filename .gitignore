@@ -1,0 +1,11 @@
+# VS Code
+.vscode
+
+# grunt
+build/
+concat/
+
+# npm
+bin/
+node_modules
+package-lock.json

@@ -1,0 +1,32 @@
+on: 
+  push:
+    branches:
+      - main
+name: Deploy app
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get new code
+      uses: actions/checkout@v2.3.2
+
+    - name: Use Node.js 12
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+      
+    - name: Build
+      run: |
+        npm install
+        npm run build
+    
+    - name: Synchronise
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.server }}
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        dry-run: ${{ secrets.dry_run }}
+        local-dir: ${{ secrets.local_dir }}
+        server-dir: ${{ secrets.server_dir }}

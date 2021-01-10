@@ -1,0 +1,12 @@
+<!--==
+ ! Dragnipur v<%= app.version %>
+ ! ==============
+ ! 
+ ! Built: <%= grunt.template.today('yyyy-mm-dd') %>
+ !
+ ! Copyright (c) <%= grunt.template.today('yyyy') %> The Know Your ISM Contributors
+ ! Authors: <%= app.author %>
+ !
+ ! MIT Licensed
+ ! https://github.com/Know-Your-ISM/dragnipur-2.git
+-->
